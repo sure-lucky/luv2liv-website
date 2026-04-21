@@ -13,6 +13,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+    <!-- intl-tel-input Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css">
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -186,12 +188,14 @@
                 quality over quantity and want a management partner who treats your asset like their own, we would love
                 to connect.</p>
 
-            <form action="https://formsubmit.co/luv2livpm@gmail.com" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <input type="tel" name="phone" placeholder="Phone Number">
+            <form action="https://formsubmit.co/luv2livpm@gmail.com" method="POST" class="contact-form" id="contact-form">
+                <div id="form-errors" class="form-errors" style="display: none;"></div>
+                
+                <input type="text" name="name" id="name" placeholder="Full Name" required>
+                <input type="email" name="email" id="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" id="phone" placeholder="Phone Number">
 
-                <textarea name="property_addresses"
+                <textarea name="property_addresses" id="property_addresses"
                     placeholder="Property Address(es) (Please list all if you have a portfolio)" rows="3"
                     required></textarea>
 
@@ -227,6 +231,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/js/intlTelInput.min.js"></script>
     <script src="js/scripts.js"></script>
 </body>
 
