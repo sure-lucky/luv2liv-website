@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY Landlord Stress Test | Luv2Liv Property Management</title>
+    <meta name="description"
+        content="Take the DIY Landlord Stress Test to see if your self-managed rental portfolio is carrying unnecessary legal or operational risk.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- intl-tel-input Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Luv2Liv <span class="logo-subtitle">Property Management</span></a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#philosophy" class="nav-link">Philosophy</a></li>
+                    <li><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li><a href="analyzer.html" class="nav-link">Analyzer</a></li>
+                    <li><a href="landlord-quiz.html" class="nav-link">Stress Test</a></li>
+                    <li><a href="index.html#contact" class="nav-link btn-contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header" style="padding-top: 150px; background-color: var(--primary-color); color: var(--text-light); text-align: center; padding-bottom: 3rem;">
+        <div class="container">
+            <h1 class="hero-headline" style="font-size: 2.5rem; margin-bottom: 0.5rem;">DIY LANDLORD STRESS TEST</h1>
+            <p class="hero-subheadline" style="font-size: 1.2rem; margin-bottom: 0;">Identify your legal and operational liabilities.</p>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz-section section-padding bg-light">
+        <div class="container quiz-wrapper">
+            
+            <div class="quiz-container" id="quiz-container">
+                
+                <!-- Progress Bar -->
+                <div class="quiz-progress-wrapper" id="progress-wrapper">
+                    <div class="quiz-progress-text" id="progress-text">Question 1 of 4</div>
+                    <div class="quiz-progress-bar-bg">
+                        <div class="quiz-progress-bar-fill" id="progress-fill" style="width: 25%;"></div>
+                    </div>
+                </div>
+
+                <!-- Steps Container (Relative for absolute positioning of steps) -->
+                <div class="quiz-steps-wrapper">
+                    
+                    <!-- Question 1 -->
+                    <div class="quiz-step active" id="step-1">
+                        <h2 class="quiz-question">How do you currently hold your tenant's security deposit?</h2>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-score="0">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">In a legally compliant, non-interest-bearing Virginia Escrow account.</span>
+                            </button>
+                            <button class="quiz-option" data-score="10">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">In my personal or standard business checking account.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="quiz-step next-step" id="step-2">
+                        <h2 class="quiz-question">What legal framework are your leases based on?</h2>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-score="0">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">The current Northern Virginia Association of Realtors (NVAR) standard forms.</span>
+                            </button>
+                            <button class="quiz-option" data-score="10">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">A generic PDF I downloaded online or drafted myself.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="quiz-step next-step" id="step-3">
+                        <h2 class="quiz-question">How do your tenants report emergency maintenance at 2 AM?</h2>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-score="10">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">They call my personal cell phone.</span>
+                            </button>
+                            <button class="quiz-option" data-score="0">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">Through an automated, 24/7 digital portal.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="quiz-step next-step" id="step-4">
+                        <h2 class="quiz-question">How do you collect rent?</h2>
+                        <div class="quiz-options">
+                            <button class="quiz-option" data-score="10">
+                                <span class="option-letter">A</span>
+                                <span class="option-text">Zelle, Venmo, or physical checks.</span>
+                            </button>
+                            <button class="quiz-option" data-score="0">
+                                <span class="option-letter">B</span>
+                                <span class="option-text">Automated ACH via a tenant portal.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Results Page -->
+                    <div class="quiz-step next-step" id="step-results">
+                        <div class="results-header">
+                            <h2 class="quiz-question" id="results-title">Analysis Complete</h2>
+                        </div>
+                        
+                        <div class="results-body" id="results-body">
+                            <!-- Dynamic content will be injected here via JS -->
+                        </div>
+
+                        <div class="results-pitch">
+                            <div class="gold-accent-box" style="position: static; margin-top: 2rem; padding: 2rem; text-align: center; background: var(--bg-white);">
+                                <h3 style="color: var(--primary-color); margin-bottom: 1rem; font-family: var(--font-heading); font-size: 1.5rem;">Upgrade to the Luv2Liv Investor Tech Tier.</h3>
+                                <p style="margin-bottom: 2rem; color: #555;">For just $30/month, you get a fully branded portal, automated ACH rent routing, and digitized document storage. Keep your cash flow. Offload the stress.</p>
+                                <a href="index.html#contact" class="btn btn-primary">Request a Private Consultation</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Bottom only -->
+    <footer class="cta-footer" style="padding: 0;">
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 Luv2Liv Property Management LLC. All Rights Reserved. Licensed in Virginia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+
+</html>
