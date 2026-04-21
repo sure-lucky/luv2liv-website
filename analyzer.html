@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Deal Analyzer | Luv2Liv Property Management</title>
+    <meta name="description"
+        content="Calculate your real estate investment returns with the Luv2Liv Daily Deal Analyzer.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- intl-tel-input Styles (needed for footer if contact form exists, though footer on this page might not have the form, let's keep it for consistency) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/18.2.1/css/intlTelInput.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Luv2Liv <span class="logo-subtitle">Property Management</span></a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                    <li><a href="index.html#philosophy" class="nav-link">Philosophy</a></li>
+                    <li><a href="index.html#services" class="nav-link">Services</a></li>
+                    <li><a href="analyzer.html" class="nav-link">Analyzer</a></li>
+                    <li><a href="index.html#contact" class="nav-link btn-contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header" style="padding-top: 150px; background-color: var(--primary-color); color: var(--text-light); text-align: center; padding-bottom: 3rem;">
+        <div class="container">
+            <h1 class="hero-headline" style="font-size: 2.5rem; margin-bottom: 0.5rem;">DAILY DEAL ANALYZER</h1>
+            <p class="hero-subheadline" style="font-size: 1.2rem; margin-bottom: 0;">Run your cash flow numbers with precision.</p>
+        </div>
+    </section>
+
+    <!-- Analyzer Section -->
+    <section class="analyzer-section section-padding bg-light">
+        <div class="container">
+            <div class="analyzer-grid">
+                
+                <!-- Left Column: Inputs -->
+                <div class="analyzer-inputs">
+                    <h2 class="section-title" style="font-size: 1.8rem;">Property Details</h2>
+                    
+                    <div class="input-group">
+                        <label for="purchasePrice">Purchase Price ($) <span id="purchasePriceVal" class="val-display"></span></label>
+                        <input type="range" id="purchasePrice" min="50000" max="2000000" step="5000" value="400000">
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group half">
+                            <label for="downPayment">Down Payment (%) <span id="downPaymentVal" class="val-display"></span></label>
+                            <input type="range" id="downPayment" min="0" max="100" step="1" value="20">
+                        </div>
+                        <div class="input-group half">
+                            <label for="interestRate">Interest Rate (%) <span id="interestRateVal" class="val-display"></span></label>
+                            <input type="range" id="interestRate" min="1" max="12" step="0.125" value="6.5">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="loanTerm">Loan Term (Years) <span id="loanTermVal" class="val-display"></span></label>
+                        <input type="range" id="loanTerm" min="10" max="40" step="5" value="30">
+                    </div>
+
+                    <hr class="divider">
+
+                    <h2 class="section-title" style="font-size: 1.8rem;">Income & Expenses</h2>
+
+                    <div class="input-group">
+                        <label for="grossRent">Gross Monthly Rent ($) <span id="grossRentVal" class="val-display"></span></label>
+                        <input type="range" id="grossRent" min="500" max="10000" step="50" value="2500">
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group half">
+                            <label for="propertyTaxes">Annual Property Taxes ($) <span id="propertyTaxesVal" class="val-display"></span></label>
+                            <input type="number" id="propertyTaxes" value="4000" class="num-input">
+                        </div>
+                        <div class="input-group half">
+                            <label for="insurance">Annual Insurance ($) <span id="insuranceVal" class="val-display"></span></label>
+                            <input type="number" id="insurance" value="1200" class="num-input">
+                        </div>
+                    </div>
+
+                    <div class="input-row">
+                        <div class="input-group half">
+                            <label for="hoa">Monthly HOA ($) <span id="hoaVal" class="val-display"></span></label>
+                            <input type="number" id="hoa" value="0" class="num-input">
+                        </div>
+                        <div class="input-group half">
+                            <label for="maintenance">Maint/Vacancy Res. (%) <span id="maintenanceVal" class="val-display"></span></label>
+                            <input type="range" id="maintenance" min="0" max="20" step="1" value="10">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="managementFee">Property Management Fee (%) <span id="managementFeeVal" class="val-display"></span></label>
+                        <input type="range" id="managementFee" min="0" max="15" step="1" value="8">
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Results Dashboard -->
+                <div class="analyzer-results">
+                    <div class="results-panel sticky-panel">
+                        <h3 class="panel-title">Investment Overview</h3>
+                        
+                        <div class="result-row">
+                            <span class="result-label">Loan Amount</span>
+                            <span class="result-value" id="res-loanAmount">$0</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Monthly P&I</span>
+                            <span class="result-value" id="res-pi">$0</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Total Monthly Expenses</span>
+                            <span class="result-value" id="res-expenses">$0</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Net Operating Income (NOI)</span>
+                            <span class="result-value" id="res-noi">$0/yr</span>
+                        </div>
+                        
+                        <hr class="divider-light">
+
+                        <div class="result-row highlight-row">
+                            <span class="result-label">Monthly Cash Flow</span>
+                            <span class="result-value bold" id="res-cashflow">$0</span>
+                        </div>
+
+                        <div class="result-row">
+                            <span class="result-label">Cap Rate</span>
+                            <span class="result-value" id="res-caprate">0%</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Cash-on-Cash Return</span>
+                            <span class="result-value" id="res-coc">0%</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA Block -->
+            <div class="analyzer-cta text-center scroll-reveal" style="margin-top: 4rem;">
+                <h3 style="font-family: var(--font-heading); font-size: 2rem; color: var(--primary-color); margin-bottom: 1rem;">Does this deal pencil out?</h3>
+                <p style="font-size: 1.1rem; color: #555; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Don't let poor management eat your margins. Explore our <strong>Investor Tech Tier</strong> for just $30/month.</p>
+                <a href="index.html#contact" class="btn btn-primary">Request a Private Consultation</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Bottom only, since CTA is on page -->
+    <footer class="cta-footer" style="padding: 0;">
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 Luv2Liv Property Management LLC. All Rights Reserved. Licensed in Virginia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/scripts.js"></script>
+    <script src="js/analyzer.js"></script>
+</body>
+
+</html>
